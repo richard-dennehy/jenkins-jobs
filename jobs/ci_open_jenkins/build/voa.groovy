@@ -5,10 +5,11 @@ import uk.gov.hmrc.jenkinsjobs.domain.builder.SbtLibraryJobBuilder
 import uk.gov.hmrc.jenkinsjobs.domain.builder.SbtFrontendJobBuilder
 import uk.gov.hmrc.jenkinsjobs.domain.builder.SbtMicroserviceJobBuilder
 
-new SbtLibraryJobBuilder('play-conditional-form-mapping').
-        build(this as DslFactory)
+new SbtLibraryJobBuilder('play-conditional-form-mapping')
+        .build(this as DslFactory)
 
 new SbtFrontendJobBuilder('for-frontend')
+        .withExtendedTimeout()
         .build(this as DslFactory)
 
 new SbtFrontendJobBuilder('cca-challenge-frontend')
